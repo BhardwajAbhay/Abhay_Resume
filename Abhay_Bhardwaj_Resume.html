@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhay Bhardwaj – Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #edf2f7;
+    color: #1a202c;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .resume {
+    width: 820px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ─────────────────────────────── */
+  .header {
+    background: linear-gradient(135deg, #0f2c52 0%, #1a5276 60%, #1f618d 100%);
+    padding: 48px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -30px;
+    width: 260px; height: 260px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+
+  .header-name {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+  .header-title {
+    margin-top: 6px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #aed6f1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #aed6f1;
+    font-size: 12.5px;
+    text-decoration: none;
+  }
+  .contact-item span.icon { font-size: 14px; }
+  .contact-item a, .contact-item { color: #aed6f1; }
+  .contact-item:hover { color: #fff; }
+
+  /* ── BODY ─────────────────────────────────── */
+  .body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 0;
+  }
+
+  /* ── SIDEBAR ─────────────────────────────── */
+  .sidebar {
+    background: #f7fafc;
+    border-right: 1px solid #e2e8f0;
+    padding: 32px 24px;
+  }
+
+  .sidebar-section { margin-bottom: 32px; }
+
+  .sidebar-heading {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a5276;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #1a5276;
+  }
+
+  /* Skills */
+  .skill-group { margin-bottom: 10px; }
+  .skill-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 4px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tag {
+    display: inline-block;
+    background: #ebf5fb;
+    color: #1a5276;
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid #aed6f1;
+  }
+
+  /* Education sidebar */
+  .edu-item { margin-bottom: 14px; }
+  .edu-degree {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.4;
+  }
+  .edu-school {
+    font-size: 11px;
+    color: #5d6d7e;
+    margin-top: 1px;
+  }
+  .edu-year {
+    font-size: 10.5px;
+    color: #1a5276;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* Certifications */
+  .cert-item {
+    font-size: 11.5px;
+    color: #2c3e50;
+    padding: 6px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    line-height: 1.4;
+  }
+  .cert-item:last-child { border-bottom: none; }
+  .cert-provider { font-weight: 700; color: #1a5276; }
+
+  /* Interests */
+  .interest-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .interest-tag {
+    font-size: 11px;
+    background: #1a5276;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ── MAIN ─────────────────────────────────── */
+  .main {
+    padding: 32px 36px;
+  }
+
+  .section { margin-bottom: 28px; }
+
+  .section-heading {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a5276;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #1a5276;
+  }
+
+  /* Summary */
+  .summary-text {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #34495e;
+  }
+
+  /* Project cards */
+  .project-card {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #1a5276;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .project-card:last-child { margin-bottom: 0; }
+
+  .project-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2c40;
+    margin-bottom: 4px;
+  }
+  .project-meta {
+    font-size: 11px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .stack-tag {
+    font-size: 10px;
+    background: #1a5276;
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .project-points { padding-left: 0; list-style: none; }
+  .project-points li {
+    font-size: 12.5px;
+    color: #34495e;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .project-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #1a5276;
+    font-size: 11px;
+    top: 4px;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .project-link {
+    font-size: 11.5px;
+    color: #1a5276;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .project-link::before { content: '🔗'; font-size: 11px; }
+  .project-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="resume">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-name">Abhay Bhardwaj</div>
+    <div class="header-title">Computer Science Engineer &nbsp;·&nbsp; Full Stack Developer &nbsp;·&nbsp; AI / ML Enthusiast</div>
+    <div class="contact-bar">
+      <span class="contact-item"><span class="icon">📍</span>E-39, E-Block Shastripuram, Agra</span>
+      <span class="contact-item"><span class="icon">📞</span> 7455008387</span>
+      <a href="mailto:abhaybhardwaj15704@gmail.com" class="contact-item"><span class="icon">✉</span> abhaybhardwaj15704@gmail.com</a>
+      <a href="https://github.com/BhardwajAbhay" class="contact-item"><span class="icon">📘</span>GitHub / BhardwajAbhay</a>
+      <a href="https://leetcode.com/u/mr__bhardwaj_abhay/" class="contact-item"><span class="icon">📘</span> LeetCode / mr_bhardwaj_abhay</a>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">B.Tech – Computer Science Engg.</div>
+          <div class="edu-school">GLA University, Mathura</div>
+          <div class="edu-year">2023 – 2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Diploma – Mechanical Engineering</div>
+          <div class="edu-year">2020 – 2023</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Intermediate (Class XII)</div>
+          <div class="edu-school">Vijaya International School, Agra</div>
+          <div class="edu-year">2020</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">High School (Class X)</div>
+          <div class="edu-school">LifeLine Public School, Agra</div>
+          <div class="edu-year">2018</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Technical Skills</div>
+        <div class="skill-group">
+          <div class="skill-label">Languages</div>
+          <div class="skill-tags">
+            <span class="tag">Java</span><span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Frontend</div>
+          <div class="skill-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">React.js</span><span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Backend</div>
+          <div class="skill-tags">
+            <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">FastAPI</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Database</div>
+          <div class="skill-tags">
+            <span class="tag">MongoDB</span><span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Core Concepts</div>
+          <div class="skill-tags">
+            <span class="tag">DSA</span><span class="tag">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Machine Learning</div>
+          <div class="skill-tags">
+            <span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">NLP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Certifications</div>
+        <div class="cert-item">
+          <span class="cert-provider">Coding Blocks</span><br>
+          Java – DSA &nbsp;·&nbsp; 2 Months
+        </div>
+        <div class="cert-item">
+          <span class="cert-provider">Apna College</span><br>
+          Java – DSA &nbsp;·&nbsp; 1 Year
+        </div>
+        <div class="cert-item">
+          <span class="cert-provider">Apna College</span><br>
+          MERN Stack Development &nbsp;·&nbsp; 2 Years
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Interests</div>
+        <div class="interest-tags">
+          <span class="interest-tag">Web Dev</span>
+          <span class="interest-tag">Ethical Hacking</span>
+          <span class="interest-tag">Exercise</span>
+          <span class="interest-tag">Travelling</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+      <div class="section">
+        <div class="section-heading">Professional Summary</div>
+        <p class="summary-text">
+          4th-year Computer Science Engineering student at GLA University, Mathura, with a strong focus on <strong>Artificial Intelligence</strong> and <strong>Full Stack Web Development</strong>. Skilled in building scalable web applications and integrating machine learning models into real-world systems. Passionate about developing intelligent solutions using modern technologies.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">Projects</div>
+
+        <div class="project-card">
+          <div class="project-title">🤖 AI-Powered Smart Complaint Handler</div>
+          <div class="project-meta">Mentor: Dr. Sachin Yadav &nbsp;|&nbsp; Team Size: 5</div>
+          <div class="project-stack">
+            <span class="stack-tag">React.js</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">Tailwind CSS</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">NLP</span>
+          </div>
+          <ul class="project-points">
+            <li>Smart classification of complaints (Technical, Billing, Product Quality, Service, Delivery) using NLP</li>
+            <li>Severity prediction system with three levels — Low, Medium, and High</li>
+            <li>Fully responsive UI with dark/light mode for enhanced user experience</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/BhardwajAbhay/smartreply" class="project-link">github.com/BhardwajAbhay/smartreply</a>
+            <a href="https://smartreply-ecru.vercel.app/" class="project-link">Live Link: smartreply-ecru.vercel.app</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-title">🌾 Farming Assistant</div>
+          <div class="project-meta">Self-directed &nbsp;|&nbsp; Team Size: 1</div>
+          <div class="project-stack">
+            <span class="stack-tag">React.js</span>
+            <span class="stack-tag">Vite</span>
+            <span class="stack-tag">Tailwind CSS</span>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">MongoDB</span>
+            <span class="stack-tag">Scikit-learn</span>
+            <span class="stack-tag">Pandas</span>
+          </div>
+          <ul class="project-points">
+            <li>Crop recommendation system using ML based on N, P, K, temperature, humidity, pH, and rainfall inputs</li>
+            <li>Implemented Random Forest Classifier achieving approximately 99% prediction accuracy</li>
+            <li>Interactive dashboard for farm insights with fully responsive UI across all device sizes</li>
+            <li>REST APIs built with FastAPI for seamless machine learning model integration</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/BhardwajAbhay/Farming_Assistant" class="project-link">github.com/BhardwajAbhay/Farming_Assistant</a>
+            <a href="https://farming-assistant-bhtk-bb7hl0fyw.vercel.app/" class="project-link">Live Link: farming-assistant.vercel.app</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
